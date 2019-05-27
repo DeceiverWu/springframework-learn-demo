@@ -58,7 +58,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
         // 读取文档的根元素
         Element root = doc.getDocumentElement();
         // 解析元素的根节点及根节点下的所有子节点并添加进注册容器
-
+        parseBeanDefinitions(root);
     }
 
     /**
@@ -77,7 +77,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
                 // 强转为父类元素
                 Element ele = (Element) node;
                 // 解析给给定的节点，包括name，class，property， name， value，ref
-
+                processBeanDefinition(ele);
             }
         }
     }
